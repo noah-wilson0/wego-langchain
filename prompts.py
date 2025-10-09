@@ -92,8 +92,14 @@ REPAIR_USER_TEMPLATE = (
     "- Start by calling get_places_page(region_name={region_name}, place_type_csv='{place_type_csv}', page=0, size=40).\n"
     "- If the results are insufficient, increment page by 1 (page=1,2,3,...) until suitable or empty.\n"
     "- Do NOT make up places. Avoid anything in already_used_titles and the problematic_place itself.\n"
+    "\n"
+    "After observing tool outputs, produce ONLY a valid DraftPlanCorrectedPlaceResponse JSON (no extra text):\n"
+    "{\n"
+    '  "title": "string",\n'
+    '  "addr": "string",\n'
+    '  "tel": "string"\n'
+    "}\n"
 )
-
 
 
 def build_repair_user_msg(

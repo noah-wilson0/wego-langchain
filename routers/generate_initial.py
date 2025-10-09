@@ -1,3 +1,4 @@
+# routes_generate_initial_v1
 from fastapi import APIRouter, HTTPException
 from langchain_core.messages import HumanMessage
 from models import AutoGenerateInitialRequest, DraftPlanGeminiResponse
@@ -47,3 +48,7 @@ async def generate_initial(req: AutoGenerateInitialRequest):
         raise HTTPException(status_code=400, detail=f"Invalid plan JSON: {e}")
 
     return plan.model_dump()
+
+
+
+

@@ -17,7 +17,7 @@ async def get_places_page(
     - placeType은 CSV 그대로 전달 (예: "A01,B01")
     """
     base = os.getenv("SPRING_BASE", "http://localhost:8080").rstrip("/")
-    url = f"{base}/ai/places"
+    url = f"{base}/api/v1/ai/places"
 
     params = {
         "regionName": region_name,
