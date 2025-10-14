@@ -26,12 +26,18 @@ class DraftPlanGeminiResponse(BaseModel):
     days: List[DayItem]
 
 # ====== /ai/generate-initial 요청 ======
+class DayTime(BaseModel):
+    date: str        # "YYYY-MM-DD"
+    start_time: str  # "HH:mm"
+    end_time: str    # "HH:mm"
+
 class AutoGenerateInitialRequest(BaseModel):
     member_id: int
     region_name: str
     start_date: str
     end_date: str
-    chemi: Dict[str, Any] = Field(default_factory=dict)
+    chemi: dict
+    day_times: Optional[List[DayTime]] = None
 
 # ====== /ai/repair-slot 요청/응답 ======
 class DraftPlanCorrectionRequest(BaseModel):
