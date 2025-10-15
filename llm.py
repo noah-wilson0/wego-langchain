@@ -31,8 +31,16 @@ def _resolve_mcp_server_script() -> str:
 
 SERVER_SCRIPT = _resolve_mcp_server_script()
 
+# def make_llm():
+    # return ChatGoogleGenerativeAI(model="gemini-2.0-flash", api_key=GOOGLE_API_KEY )
 def make_llm():
-    return ChatGoogleGenerativeAI(model="gemini-2.0-flash", api_key=GOOGLE_API_KEY )
+    return ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key=GOOGLE_API_KEY,
+                                  generation_config={
+                                      "response_mime_type": "application/json",
+                                      "temperature": 0,
+                                  },
+                                  )
+
 # def make_llm():
 #     return ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key=GOOGLE_API_KEY,
 #                                   generation_config={
