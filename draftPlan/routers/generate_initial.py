@@ -1,10 +1,10 @@
-# routers/generate_initial.py
+# nodes/generate_initial.py
 import logging
 from fastapi import APIRouter, HTTPException
 from langchain_core.messages import HumanMessage, AIMessage, BaseMessage
 
-from prompts import SYSTEM_INITIAL, build_initial_user_msg
-from models import AutoGenerateInitialRequest, DraftPlanGeminiResponse
+from draftPlan.prompts import SYSTEM_INITIAL, build_initial_user_msg
+from draftPlan.DraftPlanModels import AutoGenerateInitialRequest, DraftPlanGeminiResponse
 from llm import make_mcp_client, make_llm, make_agent
 from utils import extract_tools_used, json_from_agent
 

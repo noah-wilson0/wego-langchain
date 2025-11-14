@@ -1,12 +1,12 @@
-# routers/repair_slot.py
+# nodes/repair_slot.py
 
 import json
 import logging
 from fastapi import APIRouter, HTTPException
 from langchain_core.messages import HumanMessage
 
-from prompts import SYSTEM_REPAIR, build_repair_user_msg
-from models import (
+from draftPlan.prompts import SYSTEM_REPAIR, build_repair_user_msg
+from draftPlan.DraftPlanModels import (
     DraftPlanCorrectionRequest,
     DraftPlanCorrectedPlaceResponse,
     DraftPlanGeminiResponse,
